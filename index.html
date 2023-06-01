@@ -14615,7 +14615,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li><a href="https://lt.wikipedia.org/wiki/Rekomenduojama_paros_norma">Rekomenduojamas paros normas</a></li>
+<li><a href="info.pdf">Knygutė apie vitaminus ir mineralus</a></li>
+<li><a href="https://lt.wikipedia.org/wiki/Rekomenduojama_paros_norma">Apie rekomenduojamas paros normas</a></li>
 <li><a href="https://news.christianacare.org/2013/04/nutrition-numbers-revealed-fat-intake/">Apie riebalų normas</a></li>
 <li><a href="https://www.15min.lt/gyvenimas/naujiena/mityba/lasteliena-virskinimui-ir-lieknejimui-kas-tai-ir-is-kur-jos-gauti-1030-585297">Apie ląstelieną</a></li>
 <li><a href="https://www.fda.gov/food/new-nutrition-facts-label/folate-and-folic-acid-nutrition-and-supplement-facts-labels">Apie folio rūgštį</a></li>
@@ -15664,48 +15665,23 @@ Name: ENERC_KCAL, dtype: float64</pre>
 </div>
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In [10], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> intake_df <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">get_intakes</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">nutr_df_meta</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">index</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> intake_df
 
+File <span class="ansi-green-fg">~/PycharmProjects/intakes/edamam_base.py:84</span>, in <span class="ansi-cyan-fg">get_intakes</span><span class="ansi-blue-fg">(idx)</span>
+<span class="ansi-green-intense-fg ansi-bold">     83</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">get_intakes</span>(idx):
+<span class="ansi-green-fg">---&gt; 84</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">with</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">open</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">daily_intakes.json</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">r</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg">)</span> <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> f:
+<span class="ansi-green-intense-fg ansi-bold">     85</span>         data <span style="color: rgb(98,98,98)">=</span> json<span style="color: rgb(98,98,98)">.</span>load(f)[<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">daily_intakes</span><span style="color: rgb(175,0,0)">&#34;</span>]
+<span class="ansi-green-intense-fg ansi-bold">     86</span>         df <span style="color: rgb(98,98,98)">=</span> pd<span style="color: rgb(98,98,98)">.</span>DataFrame<span style="color: rgb(98,98,98)">.</span>from_records(data)<span style="color: rgb(98,98,98)">.</span>set_index(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">tag</span><span style="color: rgb(175,0,0)">&#39;</span>)
 
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>index
-CA             800.0
-CHOCDF         333.0
-CHOLE          300.0
-ENERC_KCAL    2500.0
-FAMS            55.0
-FAPU            27.0
-FASAT           19.0
-FAT             97.0
-FE              10.0
-FIBTG           30.0
-FOLAC          400.0
-FOLDFE         200.0
-FOLFD          200.0
-K             3500.0
-MG             350.0
-NA            2300.0
-NIA             19.0
-P              800.0
-PROCNT          63.0
-RIBF             1.7
-SUGAR           33.0
-THIA             1.5
-TOCPHA          10.0
-VITA_RAE       700.0
-VITB12           2.0
-VITB6A           2.0
-VITC            40.0
-VITD            10.0
-VITK1           80.0
-WATER         2000.0
-ZN               9.5
-_WEIGHT       1200.0
-CHOCDF.net     333.0
-FATRN            NaN
-Name: quantity, dtype: float64</pre>
+<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;daily_intakes.json&#39;</pre>
 </div>
-
 </div>
 
 </div>
@@ -15723,121 +15699,7 @@ Name: quantity, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>orig_name</th>
-      <th>nutr_name</th>
-      <th>price</th>
-      <th>href</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Sviestiniai moliūgai, 1 kg</td>
-      <td>1kg butternut squash</td>
-      <td>1.79</td>
-      <td>https://barbora.lt/produktai/sviestiniai-moliu...</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Rausvieji svogūnai, 1 kg</td>
-      <td>1kg red onion</td>
-      <td>0.99</td>
-      <td>https://barbora.lt/produktai/rausvieji-svoguna...</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Karis TASTY HOME, 40 g</td>
-      <td>40g curry</td>
-      <td>0.59</td>
-      <td>https://barbora.lt/produktai/karis-tasty-home-...</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Maltos aitriosios paprikos BUGA'S, 160 g</td>
-      <td>160g ground hot peppers</td>
-      <td>1.29</td>
-      <td>https://barbora.lt/produktai/maltos-aitriosios...</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Viščiukų broilerių krūtinėlių vidinė filė BEST...</td>
-      <td>400g chicken fillet</td>
-      <td>2.99</td>
-      <td>https://barbora.lt/produktai/visciuku-broileri...</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Avinžirniai, 400 g</td>
-      <td>400g boiled chickpeas</td>
-      <td>1.29</td>
-      <td>https://barbora.lt/produktai/avinzirniai-400-g</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Konservuoti smulkinti pomidorai FAVORIT, 400 g</td>
-      <td>400g canned tomatoes</td>
-      <td>0.79</td>
-      <td>https://barbora.lt/produktai/konservuoti-smulk...</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Ekologiškas kokosų gėrimas BIONATURALIS, 400 ml</td>
-      <td>400ml coconut milk</td>
-      <td>1.39</td>
-      <td>https://barbora.lt/produktai/ekologiskas-kokos...</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Mažieji špinatai TASTY HOME (fasuoti), 200 g</td>
-      <td>200g spinach</td>
-      <td>1.89</td>
-      <td>https://barbora.lt/produktai/mazieji-spinatai-...</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Lydytas sviestas GHI KHANUM, 99,8% rieb., 500 g</td>
-      <td>500g butter ghee</td>
-      <td>10.69</td>
-      <td>https://barbora.lt/produktai/lydytas-sviestas-...</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -15850,70 +15712,7 @@ Name: quantity, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ghee</th>
-      <th>butternut squash</th>
-      <th>onions</th>
-      <th>curry powder</th>
-      <th>red chili</th>
-      <th>chicken</th>
-      <th>chickpeas</th>
-      <th>canned ripe red tomatoes</th>
-      <th>coconut milk</th>
-      <th>spinach</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.273664</td>
-      <td>0.4475</td>
-      <td>0.12375</td>
-      <td>0.07375</td>
-      <td>0.025195</td>
-      <td>1.495</td>
-      <td>0.645</td>
-      <td>0.29625</td>
-      <td>0.52125</td>
-      <td>0.945</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -15925,23 +15724,7 @@ Name: quantity, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;Energy, kcal&#39;: 1807.4, &#39;Weight, g&#39;: 1189.21, &#39;Price, eur&#39;: 4.85}
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -15980,108 +15763,9 @@ Name: quantity, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>label</th>
-      <th>quantity</th>
-      <th>unit</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>FAT</th>
-      <td>Total lipid (fat)</td>
-      <td>99.5</td>
-      <td>g</td>
-    </tr>
-    <tr>
-      <th>FAMS</th>
-      <td>Fatty acids, total monounsaturated</td>
-      <td>28.7</td>
-      <td>g</td>
-    </tr>
-    <tr>
-      <th>FAPU</th>
-      <td>Fatty acids, total polyunsaturated</td>
-      <td>3.69</td>
-      <td>g</td>
-    </tr>
-    <tr>
-      <th>FASAT</th>
-      <td>Fatty acids, total saturated</td>
-      <td>61.9</td>
-      <td>g</td>
-    </tr>
-    <tr>
-      <th>FATRN</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>CHOLE</th>
-      <td>Cholesterol</td>
-      <td>256.0</td>
-      <td>mg</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>100g coconut milk: FAMS + FAPU + FASAT + FATRN + CHOLE = 20.04 out of 21.3 FAT
-100g chicken: FAMS + FAPU + FASAT + FATRN + CHOLE = 13.95 out of 15.1 FAT
-100g oil: FAMS + FAPU + FASAT + FATRN + CHOLE = 99.16 out of 100.0 FAT
-100g butter: FAMS + FAPU + FASAT + FATRN + CHOLE = 77.12 out of 81.1 FAT
-100g butter ghee: FAMS + FAPU + FASAT + FATRN + CHOLE = 94.55 out of 99.5 FAT
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -16120,74 +15804,7 @@ Angliavandeniai yra klasifikuojami į:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>label</th>
-      <th>quantity</th>
-      <th>unit</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>CHOCDF</th>
-      <td>Carbohydrate, by difference</td>
-      <td>63.0</td>
-      <td>g</td>
-    </tr>
-    <tr>
-      <th>CHOCDF.net</th>
-      <td>Carbohydrates (net)</td>
-      <td>50.8</td>
-      <td>g</td>
-    </tr>
-    <tr>
-      <th>FIBTG</th>
-      <td>Fiber, total dietary</td>
-      <td>12.2</td>
-      <td>g</td>
-    </tr>
-    <tr>
-      <th>SUGAR</th>
-      <td>Sugars, total including NLEA</td>
-      <td>10.7</td>
-      <td>g</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -16247,68 +15864,7 @@ Angliavandeniai yra klasifikuojami į:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>label</th>
-      <th>quantity</th>
-      <th>unit</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>FOLAC</th>
-      <td>Folic acid</td>
-      <td>20.0</td>
-      <td>µg</td>
-    </tr>
-    <tr>
-      <th>FOLDFE</th>
-      <td>Folate, DFE</td>
-      <td>99.0</td>
-      <td>µg</td>
-    </tr>
-    <tr>
-      <th>FOLFD</th>
-      <td>Folate, food</td>
-      <td>65.0</td>
-      <td>µg</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -16369,23 +15925,7 @@ Angliavandeniai yra klasifikuojami į:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>ENERC_KCAL of 200g boiled chickpeas: 756.0
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -16401,25 +15941,7 @@ Angliavandeniai yra klasifikuojami į:</p>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput  celltag_hidec">
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<iframe width=860 height=630 src="./research_examples/sample1.html" frameborder="0"></iframe>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput  celltag_hidec">
 
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -16434,25 +15956,7 @@ Angliavandeniai yra klasifikuojami į:</p>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput  celltag_hide">
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<iframe width=860 height=630 src="./research_examples/sample2.html" frameborder="0"></iframe>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -16467,25 +15971,7 @@ Angliavandeniai yra klasifikuojami į:</p>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<iframe width=860 height=630 src="./research_examples/sample3.html" frameborder="0"></iframe>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -16507,176 +15993,7 @@ Angliavandeniai yra klasifikuojami į:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-      <th>price</th>
-      <th>weight</th>
-      <th>microscore</th>
-      <th>negscore</th>
-      <th>posscore</th>
-      <th>microscore_per_price</th>
-      <th>negscore_per_price</th>
-      <th>posscore_per_price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>ghee</td>
-      <td>0.273664</td>
-      <td>12.800</td>
-      <td>0.2058</td>
-      <td>0.5263</td>
-      <td>0.0843</td>
-      <td>0.752017</td>
-      <td>1.923161</td>
-      <td>0.308042</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>butternut squash</td>
-      <td>0.447500</td>
-      <td>250.000</td>
-      <td>5.4527</td>
-      <td>0.1738</td>
-      <td>0.2789</td>
-      <td>12.184804</td>
-      <td>0.388380</td>
-      <td>0.623240</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>onions</td>
-      <td>0.123750</td>
-      <td>125.000</td>
-      <td>0.7173</td>
-      <td>0.1655</td>
-      <td>0.1276</td>
-      <td>5.796364</td>
-      <td>1.337374</td>
-      <td>1.031111</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>curry powder</td>
-      <td>0.073750</td>
-      <td>5.000</td>
-      <td>0.4554</td>
-      <td>0.0097</td>
-      <td>0.1025</td>
-      <td>6.174915</td>
-      <td>0.131525</td>
-      <td>1.389831</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>red chili</td>
-      <td>0.025195</td>
-      <td>3.125</td>
-      <td>0.1501</td>
-      <td>0.0052</td>
-      <td>0.0032</td>
-      <td>5.957457</td>
-      <td>0.206388</td>
-      <td>0.127008</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>chicken</td>
-      <td>1.495000</td>
-      <td>200.000</td>
-      <td>3.0647</td>
-      <td>1.0146</td>
-      <td>0.5322</td>
-      <td>2.049967</td>
-      <td>0.678662</td>
-      <td>0.355987</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>chickpeas</td>
-      <td>0.645000</td>
-      <td>200.000</td>
-      <td>10.8274</td>
-      <td>0.7328</td>
-      <td>1.0734</td>
-      <td>16.786667</td>
-      <td>1.136124</td>
-      <td>1.664186</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>canned ripe red tomatoes</td>
-      <td>0.296250</td>
-      <td>150.000</td>
-      <td>1.7985</td>
-      <td>0.1936</td>
-      <td>0.1728</td>
-      <td>6.070886</td>
-      <td>0.653502</td>
-      <td>0.583291</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>coconut milk</td>
-      <td>0.521250</td>
-      <td>143.287</td>
-      <td>1.2651</td>
-      <td>1.4334</td>
-      <td>0.0882</td>
-      <td>2.427050</td>
-      <td>2.749928</td>
-      <td>0.169209</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>spinach</td>
-      <td>0.945000</td>
-      <td>100.000</td>
-      <td>9.7787</td>
-      <td>0.0504</td>
-      <td>0.1253</td>
-      <td>10.347831</td>
-      <td>0.053333</td>
-      <td>0.132593</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -16688,7 +16005,31 @@ Angliavandeniai yra klasifikuojami į:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In [11], line 2</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span style="color: rgb(95,135,135)">#| hide</span>
+<span class="ansi-green-fg">----&gt; 2</span> fig <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">px</span><span style="color: rgb(98,98,98)">.</span>pie(df, values<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">price</span><span style="color: rgb(175,0,0)">&#39;</span>, names<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">name</span><span style="color: rgb(175,0,0)">&#39;</span>, hover_data<span style="color: rgb(98,98,98)">=</span>[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">weight</span><span style="color: rgb(175,0,0)">&#39;</span>])
+<span class="ansi-green-intense-fg ansi-bold">      3</span> fig<span style="color: rgb(98,98,98)">.</span>update_traces(textposition<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">inside</span><span style="color: rgb(175,0,0)">&#39;</span>, textinfo<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">percent+label</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      4</span> fig_save(fig, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">research_examples/sample4.html</span><span style="color: rgb(175,0,0)">&#39;</span>)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;px&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
+</div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
 
@@ -16720,7 +16061,31 @@ Angliavandeniai yra klasifikuojami į:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In [13], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> fig <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">px</span><span style="color: rgb(98,98,98)">.</span>pie(df, values<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">weight</span><span style="color: rgb(175,0,0)">&#39;</span>, names<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">name</span><span style="color: rgb(175,0,0)">&#39;</span>, hover_data<span style="color: rgb(98,98,98)">=</span>[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">weight</span><span style="color: rgb(175,0,0)">&#39;</span>], 
+<span class="ansi-green-intense-fg ansi-bold">      2</span>              color_discrete_sequence<span style="color: rgb(98,98,98)">=</span>px<span style="color: rgb(98,98,98)">.</span>colors<span style="color: rgb(98,98,98)">.</span>sequential<span style="color: rgb(98,98,98)">.</span>RdBu)
+<span class="ansi-green-intense-fg ansi-bold">      3</span> fig<span style="color: rgb(98,98,98)">.</span>update_traces(textposition<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">inside</span><span style="color: rgb(175,0,0)">&#39;</span>, textinfo<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">percent+label</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      4</span> fig_save(fig, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">research_examples/sample5.html</span><span style="color: rgb(175,0,0)">&#39;</span>)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;px&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
+</div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
 
@@ -16752,7 +16117,32 @@ Angliavandeniai yra klasifikuojami į:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In [15], line 2</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span style="color: rgb(95,135,135)">#| hide</span>
+<span class="ansi-green-fg">----&gt; 2</span> fig <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">px</span><span style="color: rgb(98,98,98)">.</span>bar(df, x<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">name</span><span style="color: rgb(175,0,0)">&#39;</span>, y<span style="color: rgb(98,98,98)">=</span>[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">microscore</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">negscore</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">posscore</span><span style="color: rgb(175,0,0)">&#39;</span>],
+<span class="ansi-green-intense-fg ansi-bold">      3</span>        labels<span style="color: rgb(98,98,98)">=</span>{<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">variable</span><span style="color: rgb(175,0,0)">&#39;</span>:<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Score per price</span><span style="color: rgb(175,0,0)">&#39;</span>},
+<span class="ansi-green-intense-fg ansi-bold">      4</span>        barmode<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">group</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      5</span> fig_save(fig, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">research_examples/sample6.html</span><span style="color: rgb(175,0,0)">&#39;</span>)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;px&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
+</div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
 
@@ -16784,7 +16174,32 @@ Angliavandeniai yra klasifikuojami į:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In [17], line 2</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span style="color: rgb(95,135,135)">#| hide</span>
+<span class="ansi-green-fg">----&gt; 2</span> fig <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">px</span><span style="color: rgb(98,98,98)">.</span>bar(df, x<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">name</span><span style="color: rgb(175,0,0)">&#39;</span>, y<span style="color: rgb(98,98,98)">=</span>[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">microscore_per_price</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">negscore_per_price</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">posscore_per_price</span><span style="color: rgb(175,0,0)">&#39;</span>],
+<span class="ansi-green-intense-fg ansi-bold">      3</span>        labels<span style="color: rgb(98,98,98)">=</span>{<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">variable</span><span style="color: rgb(175,0,0)">&#39;</span>:<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Score per price</span><span style="color: rgb(175,0,0)">&#39;</span>},
+<span class="ansi-green-intense-fg ansi-bold">      4</span>        barmode<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">group</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      5</span> fig_save(fig, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">research_examples/sample7.html</span><span style="color: rgb(175,0,0)">&#39;</span>)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;px&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
+</div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
 
