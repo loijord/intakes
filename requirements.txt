@@ -1,0 +1,8 @@
+py_edamam
+nutritionix
+requests
+pandas
+jupyter
+notebook
+matplotlib
+plotly
